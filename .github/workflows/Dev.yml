@@ -1,18 +1,19 @@
 name: Deploy Azure Resources
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
-     permissions:
+
+    permissions:
       id-token: write
       contents: read
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
